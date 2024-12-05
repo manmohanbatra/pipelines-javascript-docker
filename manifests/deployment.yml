@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: manmohanbatrapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: manmohanbatrapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: manmohanbatrapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: manmohanbatrapipelinesjavascriptdocker 
+          image: myaksacr2000.azurecr.io/manmohanbatrapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080

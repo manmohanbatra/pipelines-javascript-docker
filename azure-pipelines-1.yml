@@ -53,7 +53,7 @@ stages:
     displayName: Deploy job
     pool:
       vmImage: $(vmImageName)
-    environment: 'manmohanbatrapipelinesjavascriptdocker-8294.javascript-app' #customize with your environment
+    environment: 'myapp' #customize with your environment
     strategy:
       runOnce:
         deploy:

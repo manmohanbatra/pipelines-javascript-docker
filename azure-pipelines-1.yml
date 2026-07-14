@@ -67,8 +67,8 @@ stages:
             displayName: Create imagePullSecret
             inputs:
               action: 'createSecret'
-              connectionType: 'kubernetesServiceConnection'
-              kubernetesServiceConnection: '$(kubernetesServiceConnection)' #customize for your Kubernetes service connection
+              connectionType: kubernetesServiceConnection
+              kubernetesServiceConnection: 'kuberneteserviceConnection' #customize for your Kubernetes service connection
               secretType: 'dockerRegistry'
               secretName: '$(imagePullSecret)'
               dockerRegistryEndpoint: '$(dockerRegistryServiceConnection)'

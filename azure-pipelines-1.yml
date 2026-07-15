@@ -64,7 +64,7 @@ stages:
               artifactName: 'manifests'
               downloadPath: '$(System.ArtifactsDirectory)/manifests'
           - task: KubernetesManifest@1
-            displayName: Create imagePullSecret
+            displayName: "Create Image Pull Secret"
             inputs:
               action: createSecret
               connectionType: kubernetesServiceConnection

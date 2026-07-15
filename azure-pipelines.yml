@@ -84,8 +84,8 @@ stages:
               kubernetesServiceConnection: myAKSapp-javascript-app
               namespace: default
               manifests: |
-                manifests/deployment.yml
-                manifests/service.yml
+                $(Pipeline.Workspace)/manifests/deployment.yml
+                $(Pipeline.Workspace)/manifests/service.yml
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
               imagePullSecrets: |

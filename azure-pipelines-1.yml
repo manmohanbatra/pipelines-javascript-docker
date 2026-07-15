@@ -18,9 +18,8 @@ variables:
   containerRegistry: 'mycontainerregistry2000.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'sa-azure-devops'
-
-  #imagePullSecret: 'mycontainerregistry20001405baef-auth'
+  #imagePullSecret: 'sa-azure-devops'
+  imagePullSecret: 'mycontainerregistry20001405baef-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'

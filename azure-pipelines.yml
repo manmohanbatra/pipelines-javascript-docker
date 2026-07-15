@@ -82,7 +82,7 @@ stages:
             displayName: Deploy
             inputs:
               kubernetesServiceConnection: myAKSapp-javascript-app
-              namespace: default
+              namespace: javascript-app
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml

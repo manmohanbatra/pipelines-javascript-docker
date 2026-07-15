@@ -63,13 +63,16 @@ stages:
             inputs:
               artifactName: 'manifests'
               downloadPath: '$(System.ArtifactsDirectory)/manifests'
-          - task: KubernetesManifest@0
+          - task: KubernetesManifest@1
             displayName: Create imagePullSecret
             inputs:
               action: createSecret
-              secretName: $(imagePullSecret)
+              connectionType: kubernetesServiceConnection
+              kubernetesServiceConnection: 'kuberneteserviceConnection' #customize for your Kubernetes service connection
+              secretType: 'dockerRegistry'
+              secretName: '$(imagePullSecret)'
+              dockerRegistryEndpoint: '$(dockerRegistryServiceConnection)'
               namespace: $(k8sNamespace)
-              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
 
         #  - task: KubernetesManifest@1
         #    displayName: Create imagePullSecret

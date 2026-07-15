@@ -90,6 +90,7 @@ stages:
               action: 'deploy'
               connectionType: kubernetesServiceConnection
               kubernetesServiceConnection: 'kuberneteserviceconnection' #customize for your Kubernetes service connection
+              namespace: $(k8sNamespace)
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
